@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal de la Base de Datos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/empleados.js"></script>
+</head>
+<style>
+
+    button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    h1{
+        background-color: #454545;
+        color: white;
+        align-content: center;
+        height: 70px;
+        align-self: center;
+        padding-top: 10px;
+    }
+    body{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: url("FondoEmpleados.jpg");
+    }
+    .contenido {
+        margin-left: 220px;
+        padding: 20px;
+    }
+    .container {
+        margin-top: 80px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .box {
+        width: 1000px;
+        height: 600px;
+        background-color: #f8f8f8;
+        margin: 0 10px;
+    }
+    .botones{
+        display: flex;
+        background-color: gray;
+        align-self: flex-end;
+        margin-top: 50px;
+
+    }
+    .btn{
+        color: white;
+        flex: 1;
+        margin: 5px;
+        align-self: flex-end;
+    }
+    img{
+        border-radius: 5px;
+    }
+    .contenido{
+        display: flex;
+        padding-right: 450px;
+    }
+    .intro{
+        align-items: center;
+        text-align: left;
+    }
+    .intro .titulo{
+        text-align: center;
+        font-size: 25px;
+        color: #808080;
+        padding-top: 30px;
+    }
+    .intro .textos{
+        text-align: start;
+        padding: 20px;
+    }
+    .imagen{
+        padding-top: 20px;
+    }
+</style>
+<body>
+    <h1>Bienvenido a la Base de Datos</h1>
+    <div class="container">
+        <div class="box">
+            <div class="imagen">
+                <img src="Base de datos.jpg" alt="">
+            </div>
+            <div class="intro">
+                <p class="titulo">Menu de la base de datos</p>
+                <p class="textos"> En esta base datos se podran realizar distintas acciones como: Agregar empleados, Actualizar datos de empleados, Borrar un empleado, Visualizar a todos los empleados y Encontrar a un empleado en especifico</p>
+            </div>
+            <div class="botones">
+                <button class="btn btn-add" onclick="cambiarContenido('add.html')">Agregar Empleado</button>
+                <button class="btn btn-update" onclick="cambiarContenido('update.html')">Actualizar Empleado</button>
+                <button class="btn btn-delete" onclick="cambiarContenido('delete.html')">Borrar Empleado</button>
+                <button class="btn btn-find" onclick="cambiarContenido('get.html')">Encontrar Empleado</button>
+                <button class="btn btn-all" onclick="cambiarContenido('getall.html')">Todos los Empleados</button>
+            </div>
+            
+        </div>
+    </div>
+    <div id="contenido" class="contenido">
+        <iframe id="iframe" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    
+    
+</body>
+<script >
+    function cargarPagina(pagina) {
+        var iframeElement = document.getElementById('iframe');
+        //Cambiar la página del iframe
+        iframeElement.src = pagina;
+    }
+</script>
+</html>
